@@ -23,7 +23,6 @@ class StudentRepositoryTest {
                 .guardianEmail("guardian@gmail.com")
                 .guardianMobile("123456789")
                 .build();
-
-        StudentRepository.save(student);
+        studentRepository.save(student);
     }
 }
