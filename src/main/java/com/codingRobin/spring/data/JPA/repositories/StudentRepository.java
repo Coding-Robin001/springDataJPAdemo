@@ -2,6 +2,7 @@ package com.codingRobin.spring.data.JPA.repositories;
 
 import com.codingRobin.spring.data.JPA.entities.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -14,6 +15,8 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     public List<Student> findByGuardianName(String guardianName);
     public Student findByFirstNameAndLastName(String firstname, String lastName);
 
-    
+
+//    JPQL
+    @Query("select s from Student s where s.emailId = ?1")
     Student getStudentByEmailAddress(String emailId);
 }
