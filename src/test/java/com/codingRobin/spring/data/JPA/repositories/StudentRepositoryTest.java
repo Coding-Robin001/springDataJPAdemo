@@ -90,6 +90,6 @@ class StudentRepositoryTest {
 
     @Test
     public void updateStudentNameByEmailIdTest(){
-        studentRepository.updateStudentNameByEmailId("codingRobin@gmail.com", "Raven Coder");
+        studentRepository.updateStudentNameByEmailId("codingRobin@gmail.com", "Raven");
     }
 }
