@@ -76,4 +76,9 @@ class CourseRepositoryTest {
 
         System.out.println("list of result " + courses);
     }
+
+    @Test
+    public void saveCourseWithStudentAndTeacher (){
+
+    }
 }
