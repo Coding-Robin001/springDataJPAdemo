@@ -66,4 +66,14 @@ class CourseRepositoryTest {
 
         System.out.println("list of courses " + sortByTitle);
     }
+
+    @Test
+    public void printFindByTitleContaining(){
+        Pageable firstPageFiveRecords = PageRequest.of(0, 10);
+
+        List<Course> courses = courseRepository.
+                findByTitleContaining("D", firstPageFiveRecords).getContent();
+
+        System.out.println("list of result " + courses);
+    }
 }
