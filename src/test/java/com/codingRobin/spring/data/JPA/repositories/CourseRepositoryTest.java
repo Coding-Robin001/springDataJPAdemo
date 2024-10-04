@@ -1,6 +1,7 @@
 package com.codingRobin.spring.data.JPA.repositories;
 
 import com.codingRobin.spring.data.JPA.entities.Course;
+import com.codingRobin.spring.data.JPA.entities.Student;
 import com.codingRobin.spring.data.JPA.entities.Teacher;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -79,6 +80,23 @@ class CourseRepositoryTest {
 
     @Test
     public void saveCourseWithStudentAndTeacher (){
+        Teacher teacher = Teacher.builder()
+                .firstName("max")
+                .lastName("thunderman")
+                .build();
+        Student student = Student.builder()
+                .firstName("speedy")
+                .lastName("luna")
+                .emailId("speedy24@gmail.com")
+                .build();
+        Course course = Course.builder()
+                .title("ExpressJS")
+                .credit(7)
+                .teacher(teacher)
+                .build();
 
+        course.addStudent(student);
+
+        courseRepository.save(course);
     }
 }
